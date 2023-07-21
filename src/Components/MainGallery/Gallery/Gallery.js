@@ -4,10 +4,10 @@ import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { FaDownload } from "react-icons/fa";
 import classes from "./Gallery.module.css";
 
-import animalImage from "../../../assets/animal.jpg";
-import natureImage from "../../../assets/nature.jpg";
-import spiritualImage from "../../../assets/spiritual.jpg";
-import modernImage from "../../../assets/modern.jpg";
+import animalImage from "../../../assets/animal.webp";
+import natureImage from "../../../assets/nature.webp";
+import spiritualImage from "../../../assets/spiritual.webp";
+import modernImage from "../../../assets/modern.webp";
 
 const Gallery = () => {
   const { data: imageUrls = [], isLoading } = useQuery(
