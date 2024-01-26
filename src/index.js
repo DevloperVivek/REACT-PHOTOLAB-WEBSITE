@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { getStorage } from "firebase/storage";
-import { firebaseApp, firestore } from "./firebaseConfig";
+import { SearchProvider } from "./Context/context";
 
-const storage = getStorage(firebaseApp);
+const root = createRoot(document.getElementById("root"));
 
-ReactDOM.render(
+root.render(
   <Fragment>
-    <App firestore={firestore} storage={storage} />
-    </Fragment>,
-  document.getElementById("root")
+    <SearchProvider>
+      <App />
+    </SearchProvider>
+  </Fragment>
 );

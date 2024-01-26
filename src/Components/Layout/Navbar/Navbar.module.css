@@ -1,12 +1,21 @@
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(34, 49, 63, 0.8);
+  background-color: transparent;
   padding: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .navbarGlass {
@@ -15,17 +24,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(34, 49, 63, 0.8) 0%,
-    rgba(34, 49, 63, 0) 100%
-  );
   pointer-events: none;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  width: 80px;
+  height: auto;
 }
 
 .navLinks {
@@ -46,7 +50,54 @@
   color: #f2c94c;
 }
 
-.active {
-  font-weight: bold;
-  color: #f2c94c;
+.exploreUploadAccount {
+  margin-left: auto;
+  display: flex;
+}
+
+.exploreUploadAccount .navLink {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    right: 0;
+    background-color: rgba(34, 49, 63, 0.8);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navLinks.mobileMenuOpen {
+    transform: translateY(0);
+  }
+
+  .mobileMenuIcon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .bar.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
