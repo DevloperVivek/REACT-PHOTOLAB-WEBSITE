@@ -36,7 +36,7 @@ const Gallery = () => {
       const initialCategory =
         categories[Math.floor(Math.random() * categories.length)];
 
-      const link = `https://api.pexels.com/v1/search?query=${initialCategory}&per_page=9`;
+      const link = `https://api.pexels.com/v1/search?query=${initialCategory}&per_page=18`;
 
       try {
         const response = await fetch(link, {
@@ -61,7 +61,7 @@ const Gallery = () => {
 
   const fetchData = async () => {
     const key = "xLdPq3JkoEB1yIzQinBLP1qVpRYZNsiCHKqgoabIaVVh1QP21G9ZJEha";
-    const link = `https://api.pexels.com/v1/search?query=${searchTerm}&per_page=9`;
+    const link = `https://api.pexels.com/v1/search?query=${searchTerm}&per_page=18`;
 
     try {
       const response = await fetch(link, {
