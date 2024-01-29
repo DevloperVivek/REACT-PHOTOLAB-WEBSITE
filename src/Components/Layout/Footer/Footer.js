@@ -34,7 +34,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://github.com/your-github-username"
+            href="https://github.com/DevloperVivek"
             target="_blank"
             rel="noopener noreferrer"
             className={classes.socialIcon}
