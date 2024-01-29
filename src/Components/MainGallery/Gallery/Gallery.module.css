@@ -51,6 +51,10 @@ button:hover {
   background: #0056b3;
 }
 
+.galleryContainer {
+  min-height: 100vh;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
