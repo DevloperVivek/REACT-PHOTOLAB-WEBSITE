@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose&display=swap");
 
 .container {
   display: flex;
@@ -123,15 +123,40 @@ button:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
-h1 {
+.content > h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-
 @media screen and (max-width: 768px) {
+  .content {
+    width: 90%;
+    max-height: 250px;
+    margin: auto;
+  }
+
+  .homeMain {
+    height: 70vh;
+  }
+
+  .content > h1 {
+    font-size: 2rem;
+  }
+
+  .content > p {
+    font-size: 1rem;
+  }
+
+  .searchBar {
+    margin-top: 10px;
+  }
+
+  .searchBar input {
+    font-size: 14px;
+  }
+
   .welcomeText {
-    font-family: 'Red Rose', sans-serif;
+    font-family: "Red Rose", sans-serif;
     font-size: 15px;
     line-height: 1.5;
     position: absolute;
@@ -143,9 +168,9 @@ h1 {
   }
 
   .grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding-top: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 2%;
   }
 
   .site-info {
@@ -158,7 +183,7 @@ h1 {
 
   .keywordsContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr);
     gap: 20px;
     margin: 20px;
   }
@@ -167,40 +192,56 @@ h1 {
     width: 100%;
     height: 200px;
   }
-
-  .searchBar {
-    margin-top: 10px;
-  }
-
-  .searchBar input {
-    font-size: 14px;
-  }
-  
-  .content {
-    width: 90%;
-    max-height: 250px;
-    margin: auto;
-  }
-  
-  .homeMain {
-    height: 70vh;
-  }
 }
 
 @media screen and (max-width: 425px) {
+  .homeMain {
+    height: 50vh;
+  }
   .content {
-    font-size: clamp(1rem, 5.5652vw, 2.5rem);
+    width: 80%;
+    height: 90%;
+  }
+  .content > h1 {
+    font-size: 1.5rem;
+  }
+  .content > p {
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .content {
-    font-size: clamp(1rem, 6.25vw, 2.5rem);
+  .content > h1 {
+    font-size: 1.5rem;
+  }
+
+  .content > p {
+    font-size: 0.8rem;
+  }
+
+  input {
+    padding: 10px 1rem;
+  }
+
+  button {
+    padding: 10px 1rem;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .content {
-    font-size: clamp(1rem, 7.2917vw, 2.5rem);
+  .content > h1 {
+    font-size: 1rem;
+  }
+
+  .content > p {
+    font-size: 0.8rem;
+  }
+
+  input {
+    padding: 8px 0.5rem;
+  }
+
+  button {
+    padding: 8px 0.5rem;
   }
 }

@@ -93,12 +93,19 @@ const Gallery = () => {
     return shuffledArray;
   };
 
-  const handleDownload = (imageUrl) => {
-    const link = document.createElement("a");
-    link.href = imageUrl;
-    link.download = "image.jpg";
-    link.target = "_self";
-    link.click();
+  const handleDownload = async (imageUrl) => {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "photolab.jpg";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading image:", error);
+    }
   };
 
   return (

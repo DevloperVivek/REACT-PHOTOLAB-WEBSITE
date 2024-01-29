@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import logo from "../../../assets/photolab2.png";
+import logo from "../../../assets/photolab.png";
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav className={`${classes.navbar} ${scrolling ? classes.scrolled : ""}`}>
       <div className={classes.navbarGlass}></div>
-      <img className={classes.logo} src={logo} />
+      <img className={classes.logo} alt="Photolab" src={logo} />
       <div className={classes.mobileMenuIcon} onClick={toggleMobileMenu}>
         <div
           className={`${classes.bar} ${mobileMenuOpen ? classes.open : ""}`}
